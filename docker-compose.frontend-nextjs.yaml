@@ -1,5 +1,5 @@
 services:
-  ddev-frontend-nextjs:
+  frontend-nextjs:
     container_name: ddev-${DDEV_SITENAME}-frontend-nextjs
     build: frontend/nextjs
     environment:

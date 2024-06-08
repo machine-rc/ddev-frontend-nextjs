@@ -2,5 +2,5 @@ name: nextjs-drupal-front
 
 pre_install_actions:
 project_files:
-- docker-compose.nextjs-drupal-front.yaml
+- docker-compose.frontend-nextjs.yaml
 - frontend/
