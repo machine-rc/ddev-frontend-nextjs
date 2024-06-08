@@ -1,0 +1,22 @@
+services:
+  frontend-nextjs:
+    container_name: ddev-${DDEV_SITENAME}-frontend-nextjs
+    build: frontend/nextjs
+    ports:
+      - "3003:3000"
+    environment:
+      - OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=http://tempo:4317
+      - OTEL_TRACES_EXPORTER=otlp
+      - OTEL_EXPORTER_OTLP_PROTOCOL=grpc
+      - VIRTUAL_HOST=$DDEV_HOSTNAME
+      - HTTP_EXPOSE=3003:3000
+      - HTTPS_EXPOSE=3003:3000
+    networks: [ default, ddev_default ]
+    restart: "no"
+    # These labels ensure this service is discoverable by ddev.
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT
+    volumes:
+      - ".:/mnt/ddev_config"
+      - "ddev-global-cache:/mnt/ddev-global-cache"

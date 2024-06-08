@@ -1,0 +1,6 @@
+name: frontend-nextjs
+
+pre_install_actions:
+project_files:
+- docker-compose.frontend-nextjs.yaml
+- frontend/
