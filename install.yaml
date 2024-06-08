@@ -1,4 +1,4 @@
-name: nextjs-drupal-front
+name: frontend-nextjs
 
 pre_install_actions:
 project_files:
