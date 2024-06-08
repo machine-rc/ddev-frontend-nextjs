@@ -6,7 +6,7 @@
 
 In the DDEV project directory launch the command:
 ```sh
-ddev get machine-rc/frontend-nextjs
+ddev get machine-rc/ddev-frontend-nextjs
 ```
 Restart the DDEV instance:
 ```sh
@@ -18,8 +18,8 @@ Access NextJS frontend application on defined port (or `3003` default) via the u
 ### Installation
 1. Clone the repository:
     ```sh
-    git clone git@github.com:machine-rc/frontend-nextjs.git
-    cd frontend-nextjs
+    git clone git@github.com:machine-rc/ddev-frontend-nextjs.git
+    cd ddev-frontend-nextjs
     ```
 2. Navigate to the project directory:
     ```sh
