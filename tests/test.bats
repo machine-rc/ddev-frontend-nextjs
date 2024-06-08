@@ -1,9 +1,9 @@
 setup() {
   set -eu -o pipefail
   export DIR="$( cd "$( dirname "$BATS_TEST_FILENAME" )" >/dev/null 2>&1 && pwd )/.."
-  export TESTDIR=~/tmp/test-frontend-nextjs
+  export TESTDIR=~/tmp/test-ddev-nextjs-drupal-front
   mkdir -p $TESTDIR
-  export PROJNAME=test-frontend-nextjs
+  export PROJNAME=test-ddev-nextjs-drupal-front
   export DDEV_NON_INTERACTIVE=true
   ddev delete -Oy ${PROJNAME} >/dev/null 2>&1 || true
   cd "${TESTDIR}"
@@ -36,8 +36,8 @@ teardown() {
 @test "install from release" {
   set -eu -o pipefail
   cd ${TESTDIR} || ( printf "unable to cd to ${TESTDIR}\n" && exit 1 )
-  echo "# ddev get machine-rc/ddev-frontend-nextjs with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
-  ddev get machine-rc/ddev-frontend-nextjs
+  echo "# ddev get machine-rc/ddev-nextjs-drupal-front with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
+  ddev get machine-rc/ddev-nextjs-drupal-front
   ddev restart >/dev/null
   health_checks
 }

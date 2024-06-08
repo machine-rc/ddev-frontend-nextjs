@@ -47,6 +47,6 @@ Current structure allows support for multiple graphql services.
 To add a new service:
 - create a new directory in the `frontend` directory with the service name.
 - copy the `Dockerfile` from the `frontend/nextjs` directory and modify it as needed.
-- adjust `docker-compose.frontend-nextjs.yaml` to include the new service by duplicating the `dotnet-users` service and changing the service name
+- adjust `docker-compose.ddev-nextjs-drupal-front.yaml` to include the new service by duplicating the `dotnet-users` service and changing the service name
   - adjust the `environment` section to expose the new service on a different port
 
